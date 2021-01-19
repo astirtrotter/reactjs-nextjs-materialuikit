@@ -1,11 +1,11 @@
-import React from 'react';
-import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-import Button from '@material-ui/core/Button';
-import ProTip from '../app/ProTip';
-import Link from '../app/Link';
-import Copyright from '../app/Copyright';
+import React from 'react'
+import Container from '@material-ui/core/Container'
+import Typography from '@material-ui/core/Typography'
+import Box from '@material-ui/core/Box'
+import Button from '@material-ui/core/Button'
+import ProTip from '../app/ProTip'
+import Link from '../app/Link'
+import Copyright from '../app/Copyright'
 
 export default function About() {
   return (
@@ -21,5 +21,5 @@ export default function About() {
         <Copyright />
       </Box>
     </Container>
-  );
+  )
 }
