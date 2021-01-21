@@ -1,6 +1,7 @@
 import React from "react";
 // react components for routing our app without refresh
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import Link from '@material-ui/core/Link';
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
@@ -24,7 +25,7 @@ export default function SectionExamples() {
       <div className={classes.container}>
         <GridContainer justify="center">
           <GridItem xs={12} sm={12} md={6}>
-            <Link to="landing-page" className={classes.link}>
+            <Link href="landing-page" className={classes.link}>
               <img
                 src={landing}
                 alt="..."
@@ -42,7 +43,7 @@ export default function SectionExamples() {
             </Link>
           </GridItem>
           <GridItem xs={12} sm={12} md={6}>
-            <Link to="profile-page" className={classes.link}>
+            <Link href="profile-page" className={classes.link}>
               <img
                 src={profile}
                 alt="..."

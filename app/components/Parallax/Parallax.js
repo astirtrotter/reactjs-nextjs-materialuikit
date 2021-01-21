@@ -12,16 +12,21 @@ import styles from "../../assets/jss/material-kit-react/components/parallaxStyle
 const useStyles = makeStyles(styles);
 
 export default function Parallax(props) {
-  let windowScrollTop;
-  if (window.innerWidth >= 768) {
-    windowScrollTop = window.pageYOffset / 3;
-  } else {
-    windowScrollTop = 0;
-  }
+  const [windowScrollTop, setWindowScrollTop] = React.useState(0);
   const [transform, setTransform] = React.useState(
     "translate3d(0," + windowScrollTop + "px,0)"
   );
+  const resetTransform = () => {
+    var wst = window.pageYOffset / 3;
+    setTransform("translate3d(0," + wst + "px,0)");
+  };
   React.useEffect(() => {
+    if (window.innerWidth >= 768) {
+      setWindowScrollTop(window.pageYOffset / 3);
+    } else {
+      setWindowScrollTop(0);
+    }
+
     if (window.innerWidth >= 768) {
       window.addEventListener("scroll", resetTransform);
     }
@@ -31,10 +36,6 @@ export default function Parallax(props) {
       }
     };
   });
-  const resetTransform = () => {
-    var windowScrollTop = window.pageYOffset / 3;
-    setTransform("translate3d(0," + windowScrollTop + "px,0)");
-  };
   const { filter, className, children, style, image, small } = props;
   const classes = useStyles();
   const parallaxClasses = classNames({

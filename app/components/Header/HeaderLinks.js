@@ -3,7 +3,8 @@ import React from "react";
 import DeleteIcon from "@material-ui/icons/Delete";
 import IconButton from "@material-ui/core/IconButton";
 // react components for routing our app without refresh
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import Link from '@material-ui/core/Link';
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
@@ -24,6 +25,11 @@ const useStyles = makeStyles(styles);
 
 export default function HeaderLinks(props) {
   const classes = useStyles();
+  const [windowWidth, setWindowWidth] = React.useState(0);
+  React.useEffect(() => {
+    setWindowWidth(window.innerWidth);
+  })
+
   return (
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
@@ -36,7 +42,7 @@ export default function HeaderLinks(props) {
           }}
           buttonIcon={Apps}
           dropdownList={[
-            <Link to="/" className={classes.dropdownLink}>
+            <Link href="/" className={classes.dropdownLink}>
               All components
             </Link>,
             <a
@@ -68,7 +74,7 @@ export default function HeaderLinks(props) {
         <Tooltip
           id="instagram-twitter"
           title="Follow us on twitter"
-          placement={window.innerWidth > 959 ? "top" : "left"}
+          placement={windowWidth > 959 ? "top" : "left"}
           classes={{ tooltip: classes.tooltip }}
         >
           <Button
@@ -85,7 +91,7 @@ export default function HeaderLinks(props) {
         <Tooltip
           id="instagram-facebook"
           title="Follow us on facebook"
-          placement={window.innerWidth > 959 ? "top" : "left"}
+          placement={windowWidth > 959 ? "top" : "left"}
           classes={{ tooltip: classes.tooltip }}
         >
           <Button
@@ -102,7 +108,7 @@ export default function HeaderLinks(props) {
         <Tooltip
           id="instagram-tooltip"
           title="Follow us on instagram"
-          placement={window.innerWidth > 959 ? "top" : "left"}
+          placement={windowWidth > 959 ? "top" : "left"}
           classes={{ tooltip: classes.tooltip }}
         >
           <Button
