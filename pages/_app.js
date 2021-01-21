@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 // import { ThemeProvider } from '@material-ui/core/styles';
-// import CssBaseline from '@material-ui/core/CssBaseline';
+import CssBaseline from '@material-ui/core/CssBaseline';
 // import theme from '../app/styles/theme';
 import "../app/assets/scss/material-kit-react.scss?v=1.9.0";
 
@@ -24,7 +24,7 @@ const MyApp = ({ Component, pageProps }) => {
         </Head>
         {/* <ThemeProvider theme={theme}> */}
           {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-          {/* <CssBaseline /> */}
+          <CssBaseline />
           <Component {...pageProps} />
         {/* </ThemeProvider> */}
       </React.Fragment>
