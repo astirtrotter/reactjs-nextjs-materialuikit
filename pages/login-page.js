@@ -6,6 +6,7 @@ import Icon from "@material-ui/core/Icon";
 // @material-ui/icons
 import Email from "@material-ui/icons/Email";
 import People from "@material-ui/icons/People";
+import LockOutlined from "@material-ui/icons/LockOutlined";
 // core components
 import Header from "../app/components/Header/Header.js";
 import HeaderLinks from "../app/components/Header/HeaderLinks.js";
@@ -128,9 +129,10 @@ export default function LoginPage(props) {
                         type: "password",
                         endAdornment: (
                           <InputAdornment position="end">
-                            <Icon className={classes.inputIconsColor}>
+                            <LockOutlined className={classes.inputIconsColor} />
+                            {/* <Icon className={classes.inputIconsColor}>
                               lock_outline
-                            </Icon>
+                            </Icon> */}
                           </InputAdornment>
                         ),
                         autoComplete: "off"
